@@ -1,0 +1,23 @@
+//Linked list implementation in c++
+#include<iostream>
+using namespace std;
+struct Node   //using structure because we need to have mixed data type stored at one place.
+{
+    int data;
+    Node *next;        /*Self referential structure:every node needs to have the address of the next node.The data type of the next
+                         node is same as the current node.*///same type as that of the structure.
+    Node(int x)//Constructer(to initialize a node)
+    {
+        data = x;
+        next = NULL;
+    }
+};
+int main()
+{
+    Node *head  = new Node(10);
+    Node *temp1 = new Node(20);
+    Node *temp2 = new Node(30);
+    head->next = temp1;
+    temp1->next = temp2;
+    return 0;
+}
